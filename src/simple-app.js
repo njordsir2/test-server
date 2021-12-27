@@ -30,7 +30,9 @@ app.get("/products", (req, res) => {
         })
     }
     res.send({
-        products: []
+        products: [{
+            productName: req.query.search
+        }]
     })
 })
 
