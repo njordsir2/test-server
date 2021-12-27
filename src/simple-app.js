@@ -2,6 +2,9 @@ const express = require("express")
 const path = require("path")
 
 const app = express()
+
+const port = process.env.PORT || 3000
+
 app.set("view engine", "hbs")
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
@@ -36,6 +39,6 @@ app.get("/products", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("The server is up and running!")
+app.listen(port, () => {
+    console.log("The server is up and running on port: " + port)
 })

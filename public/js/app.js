@@ -18,7 +18,7 @@ searchForm.addEventListener("submit", (e) => {
 
     const inputValue = searchInput.value
     console.log("User provided input: " + inputValue)
-    fetch("http://localhost:3000/products?search=" + inputValue).then((response) => {
+    fetch("/products?search=" + inputValue).then((response) => {
         response.json().then((data) => {
             console.log(data)
         })
